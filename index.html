@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="sk" data-lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lumen Consulting — Audit & Analytics Cloud Studio</title>
+  <meta name="description" content="Lumen Consulting — Audit, Internal Audit, Sustainability, Data & Analytics, ERP, CRM, BPO. Moderné cloudové riešenia a poradenstvo.">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa7b2;
+      --accent-green-1: #24c28b;
+      --accent-green-2: #1fa77a;
+      --accent-purple-1: #7b5cff;
+      --accent-purple-2: #6a4ef0;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 12px;
+      --maxw: 1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, rgba(10,12,18,1) 0%, rgba(7,9,14,1) 100%);
+      color:#e6eef3;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:40px;
+    }
+
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{position:sticky;top:0;backdrop-filter: blur(8px);background: linear-gradient(90deg, rgba(10,12,18,0.6), rgba(7,9,14,0.45));border-bottom:1px solid rgba(255,255,255,0.03);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      display:inline-grid;place-items:center;width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent-green-1),var(--accent-purple-1));box-shadow:0 6px 18px rgba(123,92,255,0.12), 0 4px 10px rgba(36,194,139,0.06);
+    }
+    .logo svg{width:28px;height:28px;fill:white}
+    .brand h1{font-size:16px;margin:0;letter-spacing:0.2px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a{color:inherit;text-decoration:none;font-weight:600;font-size:14px;padding:8px;border-radius:8px}
+    nav a:hover{background:var(--glass)}
+
+    .actions{display:flex;gap:10px;align-items:center}
+    .langswitch{display:flex;gap:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px;border-radius:8px}
+    .langswitch button{background:transparent;border:0;color:var(--muted);padding:6px 8px;border-radius:6px;cursor:pointer}
+    .langswitch button.active{color:white;background:rgba(255,255,255,0.03)}
+
+    .cta{display:inline-block;padding:8px 12px;background:linear-gradient(90deg,var(--accent-green-2),var(--accent-purple-2));color:white;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:56px 0}
+    .hero .intro h2{font-size:32px;margin:0 0 12px}
+    .hero .intro p{color:var(--muted);margin:0 0 18px}
+    .hero .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .card h4{margin:0 0 6px;font-size:14px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    .hero-visual{padding:18px;border-radius:12px;background:linear-gradient(135deg, rgba(123,92,255,0.08), rgba(36,194,139,0.05));min-height:280px;display:flex;align-items:center;justify-content:center}
+    .visual-box{width:100%;height:220px;border-radius:10px;background:linear-gradient(90deg, rgba(13,16,24,1), rgba(18,22,30,1));display:flex;flex-direction:column;gap:8px;padding:14px}
+    .visual-header{display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+    .visual-chart{flex:1;display:flex;align-items:center;justify-content:center}
+
+    /* Sections */
+    section{padding:36px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    section h3{margin:0 0 14px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    /* Services list */
+    .service{display:flex;gap:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .service svg{width:44px;height:44px;flex-shrink:0}
+    .service h4{margin:0 0 6px}
+    .service p{margin:0;color:var(--muted);font-size:13px}
+
+    /* About */
+    .about{display:flex;gap:18px;align-items:flex-start}
+    .about p{color:var(--muted)}
+
+    /* Contact */
+    .contact-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .contact-card a{display:block;color:white;text-decoration:none;font-weight:700}
+    .muted{color:var(--muted)}
+
+    footer{padding:24px 0;color:var(--muted);text-align:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      nav ul{display:none}
+      .mobile-toggle{display:inline-flex}
+    }
+
+    .mobile-toggle{display:none;background:transparent;border:0;color:var(--muted);padding:8px;border-radius:8px}
+
+    /* mobile nav drawer */
+    .drawer{position:fixed;inset:0;display:none;z-index:100}
+    .drawer .backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+    .drawer .menu{position:fixed;right:16px;top:60px;width:280px;background:linear-gradient(180deg, rgba(10,12,18,0.95), rgba(7,9,14,0.95));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .drawer.show{display:block}
+
+    /* small screens service grid */
+    @media (max-width:700px){
+      .grid-2{grid-template-columns:1fr}
+      .hero .cards{grid-template-columns:1fr}
+      .hero-visual{min-height:160px}
+      .visual-box{height:140px}
+    }
+
+    /* utility */
+    .ks{font-size:13px;color:var(--muted)}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:13px}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- simple lumen icon: circle + ray -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2v1.1a7 7 0 1 1-4 0V4a2 2 0 0 1 2-2zm0 6a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>
+        </div>
+        <div>
+          <h1>Lumen Consulting</h1>
+          <p class="ks">Audit & Analytics Cloud Studio</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home" data-i18n="nav-home">Domov</a></li>
+          <li><a href="#about" data-i18n="nav-about">O nás</a></li>
+          <li><a href="#services" data-i18n="nav-services">Služby</a></li>
+          <li><a href="#contact" data-i18n="nav-contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <div class="langswitch" role="tablist" aria-label="Language switch">
+          <button class="active" data-lang="sk">SK</button>
+          <button data-lang="en">EN</button>
+        </div>
+        <a class="cta" href="#contact" data-i18n="cta-contact">Kontakt</a>
+        <button class="mobile-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+
+    <!-- mobile drawer -->
+    <div class="drawer" id="drawer" aria-hidden="true">
+      <div class="backdrop" id="drawer-backdrop"></div>
+      <div class="menu container">
+        <nav>
+          <ul style="display:flex;flex-direction:column;gap:12px">
+            <li><a href="#home" data-i18n="nav-home">Domov</a></li>
+            <li><a href="#about" data-i18n="nav-about">O nás</a></li>
+            <li><a href="#services" data-i18n="nav-services">Služby</a></li>
+            <li><a href="#contact" data-i18n="nav-contact">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="intro">
+        <h2 data-i18n="hero-title">Audit. Analytics. Cloud native.</h2>
+        <p data-i18n="hero-sub">Pomáhame firmám zabezpečiť spoľahlivý audit, reporting a dátovú stratégiu — od ERP integrácie po AI predikcie a ESG reporting.</p>
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:18px">
+          <a class="cta" href="#services" data-i18n="hero-cta">Prejsť na služby</a>
+          <a class="chip" href="#contact" data-i18n="hero-cta-2">Získať konzultáciu</a>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h4 data-i18n="card-1-title">Komplexné služby</h4>
+            <p data-i18n="card-1-desc">Audit, interný audit, ESG, ERP a BPO v jednom integračnom rámci.</p>
+          </div>
+          <div class="card">
+            <h4 data-i18n="card-2-title">Data & BI</h4>
+            <p data-i18n="card-2-desc">Power BI dashboardy, AI predikcie, automatizované reporty a exporty.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-box">
+          <div class="visual-header">
+            <div class="ks">KPI Overview</div>
+            <div class="ks">Lumen Dashboard</div>
+          </div>
+          <div class="visual-chart">
+            <!-- decorative chart -->
+            <svg width="260" height="130" viewBox="0 0 260 130" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#24c28b" stop-opacity="1"/><stop offset="1" stop-color="#7b5cff" stop-opacity="1"/></linearGradient>
+              </defs>
+              <rect x="0" y="0" width="260" height="130" rx="8" fill="transparent" />
+              <polyline points="10,110 40,85 70,92 100,55 130,42 160,65 190,48 220,60 250,30" fill="none" stroke="url(#g1)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h3 data-i18n="about-title">O nás</h3>
+      <div class="about">
+        <div style="flex:1">
+          <p data-i18n="about-p">Lumen Consulting poskytuje komplexné riešenia v oblasti auditu, interného poradenstva, sustainability a dátovej analytiky. Spájame skúsenosti senior audit tímov s modernými cloudovými nástrojmi a automatizáciou — cieľom je spoľahlivé reportovanie, compliance a rozhodovanie založené na dátach.</p>
+
+          <ul style="margin-top:12px;display:grid;gap:6px">
+            <li class="ks">Senior tím s praxou v auditovaní a ERP integráciách</li>
+            <li class="ks">Power BI & AI nástroje pre manažérsky reporting</li>
+            <li class="ks">Zameranie na ESG, ISO a regulácie (GDPR, CSRD)</li>
+          </ul>
+        </div>
+        <div style="width:320px">
+          <div class="contact-card">
+            <div class="ks">Kontakt</div>
+            <a href="tel:+421907718785">0907 718 785</a>
+            <div style="height:6px"></div>
+            <a href="mailto:dvorakova@lumenconsulting.sk">dvorakova@lumenconsulting.sk</a>
+            <p class="ks" style="margin-top:12px">Sídlo: Bratislava (presná adresa na vyžiadanie)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h3 data-i18n="services-title">Služby</h3>
+      <div class="grid-2">
+        <!-- left column: list -->
+        <div style="display:flex;flex-direction:column;gap:12px">
+
+          <!-- 1 -->
+          <article class="service">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/></svg>
+            <div>
+              <h4>1. Audit & Assurance</h4>
+              <p>Účtovný audit, výročné správy, overenie dát pre banky, kontrola výstupov z ERP.</p>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="service">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+            <div>
+              <h4>2. Internal Audit & Senior Advisory</h4>
+              <p>Interný audit procesov, mentoring, mesačný dohľad a KPI reporting pre vedenie.</p>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="service">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
+            <div>
+              <h4>3. Sustainability & ISO Compliance</h4>
+              <p>ISO príprava, ESG reporting (CSRD/EFRAG/GRI), GDPR a Power BI ESG dashboardy.</p>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="service">
+            <svg viewBox="0 0 24 24"></svg>
+            <div>
+              <h4>4. Data & Analytics Studio</h4>
+              <p>Power BI dashboardy, AI predikcie, automatizované reporty, analýzy profitability.</p>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="service">
+            <svg viewBox="0 0 24 24"></svg>
+            <div>
+              <h4>5. ERP & Workflow Integration</h4>
+              <p>ERP Byznys Alpha Cloud, Tabidoo low-code workflowy, integrácie účtovníctva a banky.</p>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="service">
+            <svg viewBox="0 0 24 24"></svg>
+            <div>
+              <h4>6. CRM & Market Intelligence</h4>
+              <p>Nastavenie CRM, import zákazníkov z FinStat a trhové analýzy s prepojením na ERP.</p>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="service">
+            <svg viewBox="0 0 24 24"></svg>
+            <div>
+              <h4>7. Business Process Outsourcing (BPO)</h4>
+              <p>Spracovanie účtovníctva, senior kontrola, mesačný servis a audit trail.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- right column: details + CTA -->
+        <aside>
+          <div class="contact-card">
+            <h4 data-i18n="services-cta-title">Máte záujem o riešenie?</h4>
+            <p class="ks" data-i18n="services-cta-desc">Kontaktujte nás pre bezplatnú vstupnú konzultáciu. Navrhneme roadmapu prispôsobenú vašej firme.</p>
+            <div style="height:10px"></div>
+            <a href="tel:+421907718785">0907 718 785</a>
+            <div style="height:6px"></div>
+            <a href="mailto:dvorakova@lumenconsulting.sk">dvorakova@lumenconsulting.sk</a>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="card">
+            <h4>How we work</h4>
+            <p class="ks">Assessment → Design → Integrate → Monitor. Flexible delivery: advisory, integration, BPO support.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3 data-i18n="contact-title">Kontakt</h3>
+      <div class="grid-2">
+        <div>
+          <p class="ks" data-i18n="contact-p">Radi sa s vami spojíme a preberieme potreby, rozsah a očakávania. Vyplňte krátky formulár alebo nám rovno zavolajte.</p>
+
+          <form onsubmit="event.preventDefault(); window.location.href='mailto:dvorakova@lumenconsulting.sk?subject='+encodeURIComponent(document.getElementById('subject').value)+'&body='+encodeURIComponent(document.getElementById('message').value)" aria-label="Kontakt formular">
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <input id="name" placeholder="Meno" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"/>
+              <input id="email" placeholder="Email" required type="email" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"/>
+            </div>
+            <input id="subject" placeholder="Predmet" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:8px"/>
+            <textarea id="message" rows="5" placeholder="Správa" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:8px"></textarea>
+            <div style="display:flex;gap:8px">
+              <button class="cta" type="submit" data-i18n="contact-send">Odoslať</button>
+              <a class="chip" href="tel:+421907718785">0907 718 785</a>
+            </div>
+          </form>
+        </div>
+
+        <aside>
+          <div class="contact-card">
+            <h4 data-i18n="contact-card-title">Priame kontakty</h4>
+            <p class="ks">Telefonicky / Email</p>
+            <a href="tel:+421907718785">0907 718 785</a>
+            <div style="height:6px"></div>
+            <a href="mailto:dvorakova@lumenconsulting.sk">dvorakova@lumenconsulting.sk</a>
+            <div style="height:10px"></div>
+            <p class="ks">Social: LinkedIn profile (na doplnenie)</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <small>© <span id="year"></span> Lumen Consulting — Všetky práva vyhradené</small>
+        <small class="ks">Created with a modern, responsive static design</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile drawer toggle
+    const drawer = document.getElementById('drawer');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const drawerBackdrop = document.getElementById('drawer-backdrop');
+    mobileToggle.addEventListener('click', ()=>{
+      drawer.classList.toggle('show');
+      drawer.setAttribute('aria-hidden', drawer.classList.contains('show') ? 'false' : 'true');
+    });
+    drawerBackdrop.addEventListener('click', ()=>{ drawer.classList.remove('show'); drawer.setAttribute('aria-hidden','true'); });
+
+    // smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.startsWith('#')){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+          drawer.classList.remove('show');
+        }
+      })
+    });
+
+    // language strings
+    const strings = {
+      sk: {
+        'nav-home':'Domov', 'nav-about':'O nás', 'nav-services':'Služby', 'nav-contact':'Kontakt',
+        'cta-contact':'Kontakt', 'hero-title':'Audit. Analytics. Cloud native.', 'hero-sub':'Pomáhame firmám zabezpečiť spoľahlivý audit, reporting a dátovú stratégiu — od ERP integrácie po AI predikcie a ESG reporting.',
+        'hero-cta':'Prejsť na služby','hero-cta-2':'Získať konzultáciu','card-1-title':'Komplexné služby','card-1-desc':'Audit, interný audit, ESG, ERP a BPO v jednom integračnom rámci.',
+        'card-2-title':'Data & BI','card-2-desc':'Power BI dashboardy, AI predikcie, automatizované reporty a exporty.',
+        'about-title':'O nás','about-p':'Lumen Consulting poskytuje komplexné riešenia v oblasti auditu, interného poradenstva, sustainability a dátovej analytiky. Spájame skúsenosti senior audit tímov s modernými cloudovými nástrojmi a automatizáciou — cieľom je spoľahlivé reportovanie, compliance a rozhodovanie založené na dátach.',
+        'services-title':'Služby','services-cta-title':'Máte záujem o riešenie?','services-cta-desc':'Kontaktujte nás pre bezplatnú vstupnú konzultáciu. Navrhneme roadmapu prispôsobenú vašej firme.',
+        'contact-title':'Kontakt','contact-p':'Radi sa s vami spojíme a preberieme potreby, rozsah a očakávania. Vyplňte krátky formulár alebo nám rovno zavolajte.','contact-send':'Odoslať','contact-card-title':'Priame kontakty'
+      },
+      en: {
+        'nav-home':'Home', 'nav-about':'About', 'nav-services':'Services', 'nav-contact':'Contact',
+        'cta-contact':'Contact', 'hero-title':'Audit. Analytics. Cloud native.', 'hero-sub':'We help companies secure reliable audit, reporting and data strategy — from ERP integration to AI forecasts and ESG reporting.',
+        'hero-cta':'View services','hero-cta-2':'Request consult','card-1-title':'Comprehensive services','card-1-desc':'Audit, internal audit, ESG, ERP and BPO in a single integrated framework.',
+        'card-2-title':'Data & BI','card-2-desc':'Power BI dashboards, AI predictions, automated reports and exports.',
+        'about-title':'About us','about-p':'Lumen Consulting delivers end-to-end solutions in audit, internal advisory, sustainability and data analytics. We combine senior audit experience with modern cloud tools and automation — ensuring reliable reporting, compliance and data-driven decisions.',
+        'services-title':'Services','services-cta-title':'Interested in a solution?','services-cta-desc':'Contact us for a free initial consultation. We will propose a roadmap tailored to your company.',
+        'contact-title':'Contact','contact-p':'We would be happy to discuss your needs, scope and expectations. Fill in the short form or call us directly.','contact-send':'Send','contact-card-title':'Direct contacts'
+      }
+    };
+
+    function applyLang(lang){
+      // update data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(strings[lang] && strings[lang][key]){
+          el.textContent = strings[lang][key];
+        }
+      });
+      // set html lang
+      document.documentElement.lang = (lang === 'sk') ? 'sk' : 'en';
+      document.documentElement.setAttribute('data-lang', lang);
+      // toggle active button
+      document.querySelectorAll('.langswitch button').forEach(b=> b.classList.toggle('active', b.dataset.lang === lang));
+    }
+
+    document.querySelectorAll('.langswitch button').forEach(b=> b.addEventListener('click', ()=> applyLang(b.dataset.lang)));
+
+    // default
+    applyLang('sk');
+
+  </script>
+</body>
+</html>
