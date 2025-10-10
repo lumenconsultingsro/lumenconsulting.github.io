@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="sk" data-lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontakt — Lumen Studio</title>
+  <meta name="description" content="Kontaktujte Lumen Studio — dvorakova@lumenstudio.sk, 0907 718 785" />
+  <style>
+    :root{--bg:#fff;--text:#0b0b0b;--muted:#555b60;--accent-green:#1fa77a;--accent-purple:#7b5cff;--accent-grad:linear-gradient(90deg,var(--accent-green),var(--accent-purple));--maxw:1100px;font-family:Inter,system-ui,Arial}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}a{color:inherit}
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+    header{border-bottom:1px solid #eee;position:sticky;top:0;background:white;z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+    nav ul{display:flex;gap:14px;align-items:center;list-style:none;margin:0;padding:0}
+    .langswitch{display:flex;gap:6px;border:1px solid #eee;padding:6px;border-radius:8px}
+    .langswitch button{background:transparent;border:0;padding:6px 8px;cursor:pointer;color:var(--muted)}
+    .langswitch button.active{background:var(--accent-grad);color:white;border-radius:6px}
+    main{padding:36px 0}
+    .form{max-width:760px}
+    input,textarea{width:100%;padding:12px;border:1px solid #e9e9e9;border-radius:8px;margin-bottom:12px}
+    .cta{padding:10px 16px;background:var(--accent-grad);color:white;border-radius:10px;border:0;cursor:pointer}
+    footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid #f6f6f6;text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--accent-green),var(--accent-purple));display:grid;place-items:center;color:white"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2a2 2 0 0 1 2 2v1.2a7 7 0 1 1-4 0V4a2 2 0 0 1 2-2zM12 8a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg></div>
+        <div><div style="font-weight:700">Lumen Studio</div><div style="font-size:13px;color:var(--muted)">Audit & Analytics Cloud Studio</div></div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" data-i18n="nav-home">Domov</a></li>
+          <li><a href="about.html" data-i18n="nav-about">O nás</a></li>
+          <li><a href="services.html" data-i18n="nav-services">Služby</a></li>
+          <li><a href="contact.html" data-i18n="nav-contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="langswitch"><button class="active" data-lang="sk">SK</button><button data-lang="en">EN</button></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 data-i18n="contact-title">Kontakt</h1>
+
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:20px">
+      <div>
+        <p style="color:var(--muted)" data-i18n="contact-p">Radi sa s vami spojíme. Vyplňte krátky formulár alebo nám rovno zavolajte / napíšte e-mail.</p>
+
+        <!-- simple mailto form -->
+        <form class="form" onsubmit="event.preventDefault(); const s=document.getElementById('subject').value||'Kontakt zo stránky'; const m=document.getElementById('message').value||''; const name=document.getElementById('name').value||''; const from=document.getElementById('email').value||''; window.location.href='mailto:dvorakova@lumenstudio.sk?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent('Meno: '+name+'%0AEmail: '+from+'%0A%0A'+m) ">
+          <input id="name" placeholder="Meno" required />
+          <input id="email" placeholder="Email" required type="email" />
+          <input id="subject" placeholder="Predmet" />
+          <textarea id="message" rows="6" placeholder="Správa"></textarea>
+          <div style="display:flex;gap:12px">
+            <button class="cta" type="submit" data-i18n="contact-send">Odoslať</button>
+            <a class="cta" href="tel:+421907718785" style="background:#f3f3f3;color:var(--text);text-decoration:none">0907 718 785</a>
+          </div>
+        </form>
+      </div>
+
+      <aside>
+        <div style="border:1px solid #f0f0f0;padding:16px;border-radius:12px">
+          <div style="font-weight:700">Priame kontakty</div>
+          <div style="margin-top:8px;color:var(--muted)"><a href="mailto:dvorakova@lumenstudio.sk">dvorakova@lumenstudio.sk</a></div>
+          <div style="margin-top:6px"><a href="tel:+421907718785">0907 718 785</a></div>
+          <p style="color:var(--muted);margin-top:12px">Social: LinkedIn (doplníme)</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Lumen Studio — Všetky práva vyhradené</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const strings = {
+      sk:{'nav-home':'Domov','nav-about':'O nás','nav-services':'Služby','nav-contact':'Kontakt','contact-title':'Kontakt','contact-p':'Radi sa s vami spojíme. Vyplňte krátky formulár alebo nám rovno zavolajte.','contact-send':'Odoslať'},
+      en:{'nav-home':'Home','nav-about':'About','nav-services':'Services','nav-contact':'Contact','contact-title':'Contact','contact-p':'We would be happy to discuss your needs. Fill the short form or call us.','contact-send':'Send'}
+    };
+    function applyLang(lang){
+      document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(strings[lang]&&strings[lang][k]) el.textContent=strings[lang][k];});
+      document.documentElement.lang=(lang==='sk')?'sk':'en';localStorage.setItem('siteLang',lang);
+      document.querySelectorAll('.langswitch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+    }
+    document.querySelectorAll('.langswitch button').forEach(b=>b.addEventListener('click', ()=>applyLang(b.dataset.lang)));
+    applyLang(localStorage.getItem('siteLang')||'sk');
+  </script>
+</body>
+</html>
