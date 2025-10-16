@@ -5,101 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Služby – Lumen Consulting</title>
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-  <div class="logo">Lumen Consulting</div>
-  <nav>
-    <a href="index.html">Domov</a>
-    <a href="about.html">O nás</a>
-    <a href="services.html" class="active">Služby</a>
-    <a href="contact.html">Kontakt</a>
-    <div class="switches">
-      <button id="mode-toggle" class="switch-btn">☀️ Light</button>
-      <button id="lang-toggle" class="switch-btn">EN</button>
-    </div>
-  </nav>
-</header>
+  <style>
+    /* Elegantné karty pre sekciu služieb */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f8fa;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
 
-<section class="hero">
-  <h1>Audit & Analytics Cloud Studio</h1>
-  <p>Komplexný rámec pre audit, reporting, automatizáciu a dátové riešenia novej generácie.</p>
-</section>
+    header {
+      background: linear-gradient(90deg, #532d7f, #5bbf89);
+      color: white;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-<main class="services">
-  <section>
-    <h2>1. Audit & Assurance</h2>
-    <ul>
-      <li>Účtovný audit, výročné správy, poznámky</li>
-      <li>Overenie dát (assurance) pre banky, investorov, vedenie</li>
-      <li>Kontrola výstupov z účtovníctva</li>
-      <li>Prepojenie s BPO modulom pre spracovanie účta</li>
-    </ul>
-  </section>
+    header .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
 
-  <section>
-    <h2>2. Internal Audit & Senior Advisory</h2>
-    <ul>
-      <li>Interný audit procesov, cash flow, compliance</li>
-      <li>Mentoring juniorov, kontrolné mechanizmy</li>
-      <li>Mesačný dohľad + odporúčania</li>
-      <li>KPI reporting pre vedenie</li>
-    </ul>
-  </section>
+    nav a {
+      color: white;
+      margin: 0 0.8rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
 
-  <section>
-    <h2>3. Sustainability</h2>
-    <ul>
-      <li>ESG reporting podľa CSRD / EFRAG / GRI</li>
-      <li>GDPR, interné smernice, procesné mapy</li>
-      <li>Power BI ESG dashboardy</li>
-    </ul>
-  </section>
+    nav a:hover {
+      opacity: 0.8;
+    }
 
-  <section>
-    <h2>4. Data & Analytics Studio</h2>
-    <ul>
-      <li>Power BI dashboardy: cash flow, obraty, ESG, forecasty</li>
-      <li>AI predikcie + benchmarking</li>
-      <li>Automatizované reporty + exporty</li>
-      <li>Analýza profitability produktov (kontribúcia, bod zlomu)</li>
-      <li>Rozpočty, 5-ročné plány, valuácie</li>
-    </ul>
-  </section>
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: linear-gradient(to right, rgba(83,45,127,0.1), rgba(91,191,137,0.1));
+    }
 
-  <section>
-    <h2>5. Workflow Integration</h2>
-    <ul>
-      <li>Tabidoo: low-code workflowy, role-based prístup, audit trail</li>
-      <li>Účtovníctvo, sklad, CRM, fakturácia, reporting</li>
-      <li>Výstupy pre manažment</li>
-    </ul>
-  </section>
+    .hero h1 {
+      font-size: 2.2rem;
+      color: #532d7f;
+      margin-bottom: 0.5rem;
+    }
 
-  <section>
-    <h2>6. CRM & Market Intelligence</h2>
-    <ul>
-      <li>Nastavenie CRM (napr. Tabidoo)</li>
-      <li>Import zákazníkov z trhu (FinStat, vlastné zdroje)</li>
-      <li>Trhové analýzy: segmentácia, potenciál, konkurencia</li>
-      <li>Prepojenie CRM s reportingom a marketingom</li>
-    </ul>
-  </section>
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #444;
+      font-size: 1.05rem;
+    }
 
-  <section>
-    <h2>7. Business Process Outsourcing (BPO)</h2>
-    <ul>
-      <li>Spracovanie účtovníctva + reporting</li>
-      <li>Senior kontrola výstupov + audit trail</li>
-      <li>Mesačný servis + výstupy</li>
-    </ul>
-  </section>
-</main>
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      padding: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-<footer>
-  © 2025 Lumen Consulting | info@lumenconsulting.sk
-</footer>
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border-top: 4px solid transparent;
+    }
 
-<script src="script.js"></script>
-</body>
-</html>
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      border-top: 4px solid #5bbf89;
+    }
+
+    .service-card h2 {
+      font-size: 1.3rem;
+      color: #532d7f;
+      margin-bottom: 1rem;
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .service-ca
