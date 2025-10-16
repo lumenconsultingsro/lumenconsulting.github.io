@@ -1,197 +1,103 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – Lumen Consulting</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8f8fa;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: linear-gradient(90deg, #532d7f, #5bbf89);
-      color: white;
-      padding: 1.2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header .logo {
-      font-size: 1.4rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 0.8rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-
-    nav a:hover {
-      opacity: 0.8;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem 2rem;
-      background: linear-gradient(to right, rgba(83,45,127,0.1), rgba(91,191,137,0.1));
-    }
-
-    .hero h1 {
-      font-size: 2.2rem;
-      color: #532d7f;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      color: #444;
-      font-size: 1.05rem;
-    }
-
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      padding: 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .contact-info {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-
-    .contact-info h2 {
-      color: #532d7f;
-      margin-bottom: 1rem;
-    }
-
-    .contact-info p {
-      line-height: 1.6;
-      margin-bottom: 0.8rem;
-    }
-
-    form {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #532d7f;
-      font-weight: 500;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      transition: border 0.2s;
-    }
-
-    form input:focus,
-    form textarea:focus {
-      border: 1px solid #5bbf89;
-      outline: none;
-    }
-
-    button[type="submit"] {
-      background: linear-gradient(90deg, #532d7f, #5bbf89);
-      color: white;
-      border: none;
-      padding: 0.9rem 1.8rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button[type="submit"]:hover {
-      opacity: 0.9;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #532d7f;
-      color: white;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt – Lumen Consulting</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Tu je jednoduchý dizajn formulára */
+body { font-family:'Inter',sans-serif; background:#f8f8fa; color:#222; margin:0; padding:0; }
+header { background: linear-gradient(90deg,#532d7f,#5bbf89); color:white; padding:1.2rem 3rem; display:flex; justify-content:space-between; align-items:center;}
+header .logo{font-size:1.4rem;font-weight:600;}
+nav a{color:white;margin:0 0.8rem;text-decoration:none;font-weight:500;transition:opacity 0.2s;}
+nav a:hover{opacity:0.8;}
+.hero{text-align:center;padding:4rem 2rem 2rem;background:linear-gradient(to right, rgba(83,45,127,0.1), rgba(91,191,137,0.1));}
+.hero h1{font-size:2.2rem;color:#532d7f;margin-bottom:0.5rem;}
+.hero p{max-width:600px;margin:0 auto;color:#444;font-size:1.05rem;}
+.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:3rem;max-width:1100px;margin:0 auto;}
+.contact-info,form{background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,0.08);}
+.contact-info h2{color:#532d7f;margin-bottom:1rem;}
+.contact-info p{line-height:1.6;margin-bottom:0.8rem;}
+form label{display:block;margin-bottom:0.5rem;color:#532d7f;font-weight:500;}
+form input,form textarea{width:100%;padding:0.8rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;font-family:inherit;transition:border 0.2s;}
+form input:focus,form textarea:focus{border:1px solid #5bbf89;outline:none;}
+button[type="submit"]{background:linear-gradient(90deg,#532d7f,#5bbf89);color:white;border:none;padding:0.9rem 1.8rem;font-size:1rem;border-radius:8px;cursor:pointer;transition:background 0.3s;}
+button[type="submit"]:hover{opacity:0.9;}
+footer{text-align:center;padding:2rem;background:#532d7f;color:white;margin-top:2rem;font-size:0.9rem;}
+@media(max-width:900px){.contact-container{grid-template-columns:1fr;}}
+</style>
 </head>
-
 <body>
 <header>
-  <div class="logo">Lumen Consulting</div>
-  <nav>
-    <a href="index.html">Domov</a>
-    <a href="about.html">O nás</a>
-    <a href="services.html">Služby</a>
-    <a href="contact.html" class="active">Kontakt</a>
-  </nav>
+<div class="logo">Lumen Consulting</div>
+<nav>
+<a href="index.html">Domov</a>
+<a href="about.html">O nás</a>
+<a href="services.html">Služby</a>
+<a href="contact.html" class="active">Kontakt</a>
+</nav>
 </header>
 
 <section class="hero">
-  <h1>Kontaktujte nás</h1>
-  <p>Napíšte nám správu alebo požiadajte o konzultáciu. Ozveme sa vám do 24 hodín.</p>
+<h1>Kontaktujte nás</h1>
+<p>Napíšte nám správu alebo požiadajte o konzultáciu. Ozveme sa vám do 24 hodín.</p>
 </section>
 
 <div class="contact-container">
-  <div class="contact-info">
-    <h2>Lumen Consulting</h2>
-    <p><strong>Adresa:</strong><br>Bratislava, Slovensko</p>
-    <p><strong>Email:</strong><br><a href="mailto:info@lumenconsulting.sk">info@lumenconsulting.sk</a></p>
-    <p><strong>Telefon:</strong><br>+421 900 000 000</p>
-    <p><strong>Oblasti:</strong><br>Audit, Reporting, Data & ESG, Cloud riešenia</p>
-  </div>
+<div class="contact-info">
+<h2>Lumen Consulting</h2>
+<p><strong>Adresa:</strong><br>Bratislava, Slovensko</p>
+<p><strong>Email:</strong><br><a href="mailto:info@lumenconsulting.sk">info@lumenconsulting.sk</a></p>
+<p><strong>Telefon:</strong><br>+421 900 000 000</p>
+<p><strong>Oblasti:</strong><br>Audit, Reporting, Data & ESG, Cloud riešenia</p>
+</div>
 
-  <!-- Formspree – bez backendu -->
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <label for="name">Meno a priezvisko</label>
-    <input type="text" id="name" name="name" required>
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<label for="name">Meno a priezvisko</label>
+<input type="text" id="name" name="name" required>
 
-    <label for="email">Emailová adresa</label>
-    <input type="email" id="email" name="_replyto" required>
+<label for="email">Emailová adresa</label>
+<input type="email" id="email" name="_replyto" required>
 
-    <label for="message">Správa</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+<label for="message">Správa</label>
+<textarea id="message" name="message" rows="5" required></textarea>
 
-    <button type="submit">Odoslať správu</button>
-  </form>
+<button type="submit">Odoslať správu</button>
+</form>
 </div>
 
 <footer>
-  © 2025 Lumen Consulting | info@lumenconsulting.sk
+© 2025 Lumen Consulting | info@lumenconsulting.sk
 </footer>
+
+<script>
+const form = document.querySelector("form");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const response = await fetch(form.action, { method: form.method, body: data, headers: {'Accept':'application/json'} });
+
+  const messageBox = document.createElement('div');
+  messageBox.style.marginTop = '1rem';
+  messageBox.style.padding = '1rem';
+  messageBox.style.borderRadius = '8px';
+  messageBox.style.textAlign = 'center';
+  messageBox.style.fontWeight = '500';
+
+  if(response.ok){
+    messageBox.textContent = "✅ Ďakujeme, správa bola úspešne odoslaná.";
+    messageBox.style.backgroundColor = '#e6f8ee';
+    messageBox.style.color = '#2a7b4f';
+    form.reset();
+  } else {
+    messageBox.textContent = "⚠️ Oops! Niečo sa pokazilo. Skúste znova.";
+    messageBox.style.backgroundColor = '#fdecea';
+    messageBox.style.color = '#a33';
+  }
+
+  form.appendChild(messageBox);
+});
+</script>
 </body>
 </html>
