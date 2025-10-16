@@ -1,98 +1,40 @@
-<!doctype html>
-<html lang="sk" data-lang="sk">
+<!DOCTYPE html>
+<html lang="sk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>O nás — Lumen Studio</title>
-  <meta name="description" content="O nás — Lumen Studio. Senior audit tím, data & analytics, ESG, ERP integrácie." />
-  <style>
-    /* (use same CSS as index.html) */
-    :root{--bg:#fff;--text:#0b0b0b;--muted:#555b60;--accent-green:#1fa77a;--accent-purple:#7b5cff;--accent-grad:linear-gradient(90deg,var(--accent-green),var(--accent-purple));--maxw:1100px;--radius:10px;font-family:Inter,system-ui,Arial}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}a{color:inherit}
-    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
-    header{border-bottom:1px solid #eee;position:sticky;top:0;background:white;z-index:40}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:var(--accent-grad);display:grid;place-items:center;color:white;font-weight:700}
-    nav ul{display:flex;gap:14px;align-items:center;list-style:none;margin:0;padding:0}
-    nav a{padding:8px 10px;border-radius:8px;font-weight:600;text-decoration:none}
-    .langswitch{display:flex;gap:6px;border:1px solid #eee;padding:6px;border-radius:8px}
-    .langswitch button{background:transparent;border:0;padding:6px 8px;cursor:pointer;color:var(--muted)}
-    .langswitch button.active{background:var(--accent-grad);color:white;border-radius:6px}
-    .cta{padding:10px 14px;background:var(--accent-grad);color:white;border-radius:10px;text-decoration:none;font-weight:700}
-    main{padding:36px 0}
-    .grid-2{display:grid;grid-template-columns:1fr 360px;gap:20px}
-    .card{background:#fff;border:1px solid #f0f0f0;padding:16px;border-radius:12px}
-    footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid #f6f6f6;text-align:center}
-    @media (max-width:900px){.grid-2{grid-template-columns:1fr}}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O nás – Lumen Consulting</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v1.2a7 7 0 1 1-4 0V4a2 2 0 0 1 2-2zM12 8a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg></div>
-        <div><div style="font-weight:700">Lumen Studio</div><div style="font-size:13px;color:var(--muted)">Audit & Analytics Cloud Studio</div></div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html" data-i18n="nav-home">Domov</a></li>
-          <li><a href="about.html" data-i18n="nav-about">O nás</a></li>
-          <li><a href="services.html" data-i18n="nav-services">Služby</a></li>
-          <li><a href="contact.html" data-i18n="nav-contact">Kontakt</a></li>
-        </ul>
-      </nav>
-      <div class="actions">
-        <div class="langswitch" role="tablist"><button class="active" data-lang="sk">SK</button><button data-lang="en">EN</button></div>
-        <a class="cta" href="contact.html" data-i18n="cta-contact">Kontakt</a>
-      </div>
+<header>
+  <div class="logo">Lumen Consulting</div>
+  <nav>
+    <a href="index.html">Domov</a>
+    <a href="about.html">O nás</a>
+    <a href="services.html">Služby</a>
+    <a href="contact.html">Kontakt</a>
+    <div class="switches">
+      <button id="mode-toggle" class="switch-btn">☀️ Light</button>
+      <button id="lang-toggle" class="switch-btn">EN</button>
     </div>
-  </header>
+  </nav>
+</header>
 
-  <main class="container">
-    <h1 data-i18n="about-title">O nás</h1>
-    <div class="grid-2">
-      <div>
-        <p style="color:var(--muted)">Lumen Studio poskytuje komplexné riešenia v oblasti auditu, interného poradenstva, sustainability a dátovej analytiky. Spájame skúsenosti senior audit tímov s modernými cloudovými nástrojmi a automatizáciou — cieľom je spoľahlivé reportovanie, compliance a rozhodovanie založené na dátach.</p>
+<section class="hero">
+  <h1>O nás</h1>
+  <p>Spájame skúsenosti z auditu, dátovej analytiky a udržateľnosti, aby sme vytvorili inteligentné riešenia pre firmy novej generácie.</p>
+</section>
 
-        <h3 style="margin-top:18px">Naše hodnoty</h3>
-        <ul style="color:var(--muted)">
-          <li>Nezávislosť a profesionalita</li>
-          <li>Dôraz na kvalitu dát a transparentnosť</li>
-          <li>Praktické riešenia zamerané na výsledok</li>
-        </ul>
-      </div>
+<section>
+  <h2>Náš prístup</h2>
+  <p>Zameriavame sa na efektívne prepojenie auditu, dát a technológií. Naše tímy pomáhajú klientom optimalizovať procesy, zvýšiť transparentnosť a získať hodnotu z dát.</p>
+</section>
 
-      <aside>
-        <div class="card">
-          <div style="font-size:13px;color:var(--muted)">Kontakt</div>
-          <div style="font-weight:700;margin-top:6px"><a href="tel:+421907718785">0907 718 785</a></div>
-          <div style="margin-top:6px"><a href="mailto:dvorakova@lumenstudio.sk">dvorakova@lumenstudio.sk</a></div>
-          <p style="color:var(--muted);margin-top:12px">Sídlo: Bratislava (presná adresa na vyžiadanie)</p>
-        </div>
-      </aside>
-    </div>
-  </main>
+<footer>
+  © 2025 Lumen Consulting
+</footer>
 
-  <footer>
-    <div class="container">
-      <small>© <span id="year"></span> Lumen Studio — Všetky práva vyhradené</small>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const strings = {
-      sk:{'nav-home':'Domov','nav-about':'O nás','nav-services':'Služby','nav-contact':'Kontakt','cta-contact':'Kontakt','about-title':'O nás'},
-      en:{'nav-home':'Home','nav-about':'About','nav-services':'Services','nav-contact':'Contact','cta-contact':'Contact','about-title':'About us'}
-    };
-    function applyLang(lang){
-      document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(strings[lang]&&strings[lang][k]) el.textContent=strings[lang][k];});
-      document.documentElement.lang=(lang==='sk')?'sk':'en';localStorage.setItem('siteLang',lang);
-      document.querySelectorAll('.langswitch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
-    }
-    document.querySelectorAll('.langswitch button').forEach(b=>b.addEventListener('click', ()=>applyLang(b.dataset.lang)));
-    applyLang(localStorage.getItem('siteLang')||'sk');
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
