@@ -80,4 +80,17 @@ messageBox.style.borderRadius='8px';
 messageBox.style.textAlign='center';
 messageBox.style.fontWeight='500';
 if(response.ok){
-messageBox.textContent="✅
+messageBox.textContent="✅ Ďakujeme, správa bola úspešne odoslaná.";
+messageBox.style.backgroundColor='#e6f8ee';
+messageBox.style.color='#2a7b4f';
+form.reset();
+}else{
+messageBox.textContent="⚠️ Oops! Niečo sa pokazilo. Skúste znova.";
+messageBox.style.backgroundColor='#fdecea';
+messageBox.style.color='#a33';
+}
+form.appendChild(messageBox);
+});
+</script>
+</body>
+</html>
