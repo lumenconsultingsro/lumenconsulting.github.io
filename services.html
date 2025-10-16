@@ -1,139 +1,45 @@
-<!doctype html>
-<html lang="sk" data-lang="sk">
+<!DOCTYPE html>
+<html lang="sk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Služby — Lumen Studio</title>
-  <meta name="description" content="Služby Lumen Studio — Audit, Internal Audit, Sustainability, Data & Analytics, ERP, CRM, BPO." />
-  <style>
-    /* reused styling: white bg, black text, accents */
-    :root{--bg:#fff;--text:#0b0b0b;--muted:#555b60;--accent-green:#1fa77a;--accent-purple:#7b5cff;--accent-grad:linear-gradient(90deg,var(--accent-green),var(--accent-purple));--maxw:1100px;font-family:Inter,system-ui,Arial}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}a{color:inherit}
-    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
-    header{border-bottom:1px solid #eee;position:sticky;top:0;background:white;z-index:40}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
-    nav ul{display:flex;gap:14px;align-items:center;list-style:none;margin:0;padding:0}
-    .langswitch{display:flex;gap:6px;border:1px solid #eee;padding:6px;border-radius:8px}
-    .langswitch button{background:transparent;border:0;padding:6px 8px;cursor:pointer;color:var(--muted)}
-    .langswitch button.active{background:var(--accent-grad);color:white;border-radius:6px}
-    main{padding:36px 0}
-    .service-block{border:1px solid #f0f0f0;padding:18px;border-radius:12px;background:white;margin-bottom:14px}
-    .service-block h3{margin:0 0 8px}
-    footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid #f6f6f6;text-align:center}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Služby – Lumen Consulting</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div style="display:flex;gap:12px;align-items:center">
-        <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--accent-green),var(--accent-purple));display:grid;place-items:center;color:white"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2a2 2 0 0 1 2 2v1.2a7 7 0 1 1-4 0V4a2 2 0 0 1 2-2zM12 8a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg></div>
-        <div><div style="font-weight:700">Lumen Studio</div><div style="font-size:13px;color:var(--muted)">Audit & Analytics Cloud Studio</div></div>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="index.html" data-i18n="nav-home">Domov</a></li>
-          <li><a href="about.html" data-i18n="nav-about">O nás</a></li>
-          <li><a href="services.html" data-i18n="nav-services">Služby</a></li>
-          <li><a href="contact.html" data-i18n="nav-contact">Kontakt</a></li>
-        </ul>
-      </nav>
-
-      <div class="langswitch"><button class="active" data-lang="sk">SK</button><button data-lang="en">EN</button></div>
+<header>
+  <div class="logo">Lumen Consulting</div>
+  <nav>
+    <a href="index.html">Domov</a>
+    <a href="about.html">O nás</a>
+    <a href="services.html">Služby</a>
+    <a href="contact.html">Kontakt</a>
+    <div class="switches">
+      <button id="mode-toggle" class="switch-btn">☀️ Light</button>
+      <button id="lang-toggle" class="switch-btn">EN</button>
     </div>
-  </header>
+  </nav>
+</header>
 
-  <main class="container">
-    <h1 data-i18n="services-title">Audit & Analytics Cloud Studio — produktové línie</h1>
+<section class="hero">
+  <h1>Naše služby</h1>
+  <p>Od auditu po dátovú analytiku – poskytujeme komplexné riešenia pre váš biznis.</p>
+</section>
 
-    <article class="service-block" id="s1">
-      <h3>1. Audit & Assurance</h3>
-      <ul style="color:var(--muted)">
-        <li>Účtovný audit, výročné správy, poznámky</li>
-        <li>Overenie dát (assurance) pre banky, investorov, vedenie</li>
-        <li>Kontrola výstupov z ERP/účtovníctva</li>
-        <li>Prepojenie s BPO modulom pre spracovanie účta</li>
-      </ul>
-    </article>
+<section>
+  <h2>Audit & Assurance</h2>
+  <p>Kompletné audítorské služby, kontrola ERP a dátových tokov, interný audit a poradenstvo.</p>
+</section>
 
-    <article class="service-block" id="s2">
-      <h3>2. Internal Audit & Senior Advisory</h3>
-      <ul style="color:var(--muted)">
-        <li>Interný audit procesov, cash flow, compliance</li>
-        <li>Mentoring juniorov, kontrolné mechanizmy</li>
-        <li>Mesačný dohľad + odporúčania</li>
-        <li>KPI reporting pre vedenie</li>
-      </ul>
-    </article>
+<section>
+  <h2>Data & Analytics Studio</h2>
+  <p>Power BI dashboardy, AI predikcie, profitability analýzy a automatizovaný reporting.</p>
+</section>
 
-    <article class="service-block" id="s3">
-      <h3>3. Sustainability & ISO Compliance</h3>
-      <ul style="color:var(--muted)">
-        <li>ESG reporting podľa CSRD/EFRAG/GRI</li>
-        <li>GDPR, interné smernice, procesné mapy</li>
-        <li>Power BI ESG dashboardy</li>
-      </ul>
-    </article>
+<footer>
+  © 2025 Lumen Consulting
+</footer>
 
-    <article class="service-block" id="s4">
-      <h3>4. Data & Analytics Studio</h3>
-      <ul style="color:var(--muted)">
-        <li>Power BI dashboardy: cash flow, obraty, ESG, forecasty</li>
-        <li>AI predikcie + benchmarking</li>
-        <li>Automatizované reporty + exporty</li>
-        <li>Analýza profitability produktov (kontribúcia, bod zlomu)</li>
-        <li>Rozpočty, 5-ročné plány, valuácie</li>
-      </ul>
-    </article>
-
-    <article class="service-block" id="s5">
-      <h3>5. ERP & Workflow Integration</h3>
-      <ul style="color:var(--muted)">
-        <li>Účtovníctvo, sklad, CRM, fakturácia, reporting</li>
-      </ul>
-    </article>
-
-    <article class="service-block" id="s6">
-      <h3>6. CRM & Market Intelligence</h3>
-      <ul style="color:var(--muted)">
-        <li>Nastavenie CRM (napr. Tabidoo)</li>
-        <li>Import zákazníkov z trhu (FinStat, vlastné zdroje)</li>
-        <li>Trhové analýzy: segmentácia, potenciál, konkurencia</li>
-        <li>Prepojenie CRM s ERP, reportingom, marketingom</li>
-      </ul>
-    </article>
-
-    <article class="service-block" id="s7">
-      <h3>7. Business Process Outsourcing (BPO)</h3>
-      <ul style="color:var(--muted)">
-        <li>Spracovanie účtovníctva + reporting</li>
-        <li>Senior kontrola výstupov + audit trail</li>
-        <li>Mesačný servis + výstupy</li>
-      </ul>
-    </article>
-
-  </main>
-
-  <footer>
-    <div class="container" style="text-align:center;color:var(--muted)">
-      © <span id="year"></span> Lumen Studio · <a href="mailto:dvorakova@lumenstudio.sk">dvorakova@lumenstudio.sk</a>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // lang switch shared small helper (same keys as in index)
-    const strings = {
-      sk:{'nav-home':'Domov','nav-about':'O nás','nav-services':'Služby','nav-contact':'Kontakt','services-title':'Služby'},
-      en:{'nav-home':'Home','nav-about':'About','nav-services':'Services','nav-contact':'Contact','services-title':'Services'}
-    };
-    function applyLang(lang){
-      document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(strings[lang]&&strings[lang][k]) el.textContent=strings[lang][k];});
-      document.documentElement.lang=(lang==='sk')?'sk':'en';localStorage.setItem('siteLang',lang);
-      document.querySelectorAll('.langswitch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
-    }
-    document.querySelectorAll('.langswitch button').forEach(b=>b.addEventListener('click', ()=>applyLang(b.dataset.lang)));
-    applyLang(localStorage.getItem('siteLang')||'sk');
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
